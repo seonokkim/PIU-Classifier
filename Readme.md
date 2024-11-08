@@ -4,7 +4,7 @@ This repository provides a `Streamlit` web application to predict the 'sii' metr
 
 ## Demo
 
-You can check a live demo of the application and further details [here on Notion](https://seonokrkim.notion.site/Logistic-Regression-x-Streamlit-42cef9487f97419b81e37e745bf6b9c4?pvs=4).
+You can check a live demo of the application and further details [here](https://youtu.be/1xjrEED2PS4).
 
 ## Video Guide
 
