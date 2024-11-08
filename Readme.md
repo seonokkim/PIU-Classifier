@@ -1,46 +1,73 @@
-# 인터넷 중증도 예측 서비스
+# Logistic Regression x Streamlit
 
-이 프로젝트는 Streamlit을 사용하여 사용자가 제공한 생리학적 데이터를 기반으로 인터넷 의존도의 중증도를 예측하는 애플리케이션입니다.
+This repository provides a `Streamlit` web application to predict the 'sii' metric based on a dataset related to various health and demographic measurements. The application utilizes `Logistic Regression` as the predictive model and integrates `KNN Imputation` for handling missing data.
 
-## 주요 기능
+## Demo
 
-- **데이터 전처리**: KNN 방식의 결측값 대체 기법을 사용해 누락된 데이터를 보완하여 신뢰할 수 있는 데이터셋을 만듭니다.
-- **사용자 입력 수집**: 나이, 성별, BMI, 혈압, 심박수 등의 사용자 정보를 사이드바에서 입력 받습니다.
-- **중증도 예측**: 사용자의 입력 데이터를 기반으로 사전 학습된 모델을 통해 인터넷 의존도 지수(SII)를 예측하여, 사용자의 의존 수준을 표시합니다.
-- **시각적 결과 제공**: 정상, 경도, 중등도, 중증의 4단계로 나누어진 중증도 레벨과 이에 따른 정보 및 권장 사항을 이미지와 함께 제공합니다.
+You can check a live demo of the application and further details [here on Notion](https://seonokrkim.notion.site/Logistic-Regression-x-Streamlit-42cef9487f97419b81e37e745bf6b9c4?pvs=4).
 
-## 필수 사항
+## Video Guide
 
-- Python 3.x
-- 필요한 Python 패키지: streamlit, pandas, numpy, scikit-learn
+The project was inspired by this [YouTube tutorial](https://www.youtube.com/watch?v=NfwfiyMi1lk&embeds_referring_euri=https%3A%2F%2Fwww.notion.so%2F&source_ve_path=MjM4NTE), which provides a step-by-step guide on implementing Logistic Regression with Streamlit.
 
-## 사용 방법
+## Features
 
-Streamlit 애플리케이션을 시작합니다:
+- **Data Preprocessing**: 
+  - Uses `KNNImputer` to handle missing values in numeric columns.
+  - Drops irrelevant columns (e.g., containing 'Season') and identifier columns (`id`) if present.
+  
+- **Model**: 
+  - Implements a `Logistic Regression` classifier to predict 'sii'.
+  - Data scaling is performed using `StandardScaler`.
+
+- **Streamlit Application**:
+  - Interactive sidebar with sliders for all 69 input features, excluding the target variable ('sii').
+  - Generates predictions dynamically based on user inputs.
+
+## Installation
+
+Ensure you have Python installed, then clone this repository and install the dependencies:
+
+```bash
+git clone https://github.com/your-repo-name.git
+cd your-repo-name
+pip install -r requirements.txt
+```
+
+## Usage
+
+### Data Preparation
+
+Place the training dataset in the designated directory (`/data/train.csv`).  
+The dataset can be downloaded from the [Kaggle competition: Child Mind Institute Problematic Internet Use](https://www.kaggle.com/competitions/child-mind-institute-problematic-internet-use/data).
+
+### Training
+
+Run `train.py` (or an equivalent script) to process the data, train the model, and save the model and scaler.
+
+### Running the Application
+
+Start the Streamlit app by executing:
 
 ```bash
 streamlit run app.py
 ```
 
-사이드바에서 나이, 성별, 키, 몸무게, BMI, 혈압, 심박수 등 필요한 정보를 입력합니다.
+## Test Results
 
-예측 실행 버튼을 눌러 예측 결과를 확인합니다.
+The model achieved an accuracy of **0.93**. Below is the detailed classification report:
 
-## 파일 및 구조
+| Class | Precision | Recall | F1-Score | Support |
+|-------|-----------|--------|----------|---------|
+| 0     | 0.95      | 0.96   | 0.96     | 412     |
+| 1     | 0.91      | 0.92   | 0.91     | 285     |
+| 2     | 0.90      | 0.87   | 0.89     | 87      |
+| 3     | 0.67      | 0.50   | 0.57     | 8       |
 
-- `app.py`: 메인 애플리케이션 파일입니다.
-- `model/model.pkl`: 인터넷 의존도 예측을 위한 사전 학습된 모델 파일입니다.
-- `data/train.csv`: 전처리를 위한 훈련 데이터셋입니다.
-- `assets/style.css`: 애플리케이션 스타일을 위한 CSS 파일입니다.
-- `assets/*.png`: 각 중증도 수준에 따른 이미지 파일입니다.
+**Overall Metrics**:
 
-## 예측 단계
-
-- **정상 (0-30%)**: 의존도 문제가 없는 상태입니다.
-- **경도 (31-49%)**: 가벼운 의존 증상이 있을 수 있으며, 인터넷 사용을 주의 깊게 관찰할 것을 권장합니다.
-- **중등도 (50-79%)**: 인터넷 과의존 가능성이 높으며, 인터넷 사용량을 줄이고 신체 활동량을 늘릴 필요가 있습니다.
-- **중증 (80-100%)**: 심각한 인터넷 의존도 상태로, 전문가의 도움을 받을 것을 권장합니다.
-
-## 참고 사항
-
-이 도구는 건강 정보 참고용으로 제공되며, 정확한 판단을 위해 전문가의 진단이 필요합니다.
+| Metric           | Value |
+|------------------|-------|
+| Accuracy         | 0.93  |
+| Macro Avg (F1)   | 0.83  |
+| Weighted Avg (F1)| 0.93  |
