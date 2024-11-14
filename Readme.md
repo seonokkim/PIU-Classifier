@@ -1,4 +1,4 @@
-# Logistic Regression x Streamlit
+# PIU-Classifier
 
 This repository provides a `Streamlit` web application to predict the 'sii' metric based on a dataset related to various health and demographic measurements. The application utilizes `Logistic Regression` as the predictive model and integrates `KNN Imputation` for handling missing data.
 
