@@ -1,0 +1,9 @@
+Model,Type,Precision,Recall,F1-Score,Accuracy
+Logistic Regression,Single,0.983,0.982,0.982,0.977
+XGBoost,Single,0.983,0.982,0.982,0.977
+AdaBoost,Single,0.973,0.99,0.982,0.977
+Gradient Boosting,Single,0.976,0.993,0.984,0.979
+AdaBoost + Gradient Boosting,Ensemble,0.976,0.993,0.984,0.979
+CatBoost,Single,0.983,0.984,0.983,0.977
+LightGBM,Single,0.986,0.987,0.986,0.98
+CatBoost + LightGBM,Ensemble,0.976,0.993,0.984,0.981
