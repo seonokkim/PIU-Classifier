@@ -31,8 +31,8 @@ The project was inspired by this [YouTube tutorial](https://www.youtube.com/watc
 Ensure you have Python installed, then clone this repository and install the dependencies:
 
 ```bash
-git clone https://github.com/your-repo-name.git
-cd your-repo-name
+git clone https://github.com/PIU-Classifier.git
+cd PIU-Classifier
 pip install -r requirements.txt
 ```
 
