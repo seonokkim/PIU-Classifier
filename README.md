@@ -1,7 +1,9 @@
 
-# PIU-Classifier
+# PIU-Classifier: Predicting Problematic Internet Use Severity
 
-This repository provides a `Streamlit` web application to predict the 'sii' metric based on a dataset related to various health and demographic measurements. The application utilizes advanced machine learning models, including `Logistic Regression`, `XGBoost`, `CatBoost`, `LightGBM`, and ensemble methods, and integrates `KNN Imputation` for handling missing data.
+This project focuses on developing and deploying machine learning models to predict the ‘sii’ metric, a severity index for problematic internet use. Leveraging advanced ML techniques, it applies CatBoost, LightGBM, and Voting Classifier models to analyze health and demographic data. The pipeline incorporates KNN Imputation to handle missing values and uses scalable, robust preprocessing to ensure accurate predictions.
+
+The trained models are integrated into a Streamlit web application, allowing users to input health and demographic data interactively and receive real-time predictions of the ‘sii’ metric. This application provides an accessible and intuitive interface for practical use.
 
 ## Demo
 
