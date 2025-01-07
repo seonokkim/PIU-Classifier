@@ -1,6 +1,6 @@
 
 # PIU-Classifier: Predicting Problematic Internet Use Severity
-![AdaptCoder Diagram](https://github.com/seonokkim/AdaptCoder/blob/main/figure/AdaptCoder.jpg)
+![Project Overview](https://github.com/seonokkim/PIU-Classifier/blob/main/presentation/project_overview.png)
 
 This project focuses on developing and deploying machine learning models to predict the ‘sii’ metric, a severity index for problematic internet use. Leveraging advanced ML techniques, it applies CatBoost, LightGBM, and Voting Classifier models to analyze health and demographic data. The pipeline incorporates KNN Imputation to handle missing values and uses scalable, robust preprocessing to ensure accurate predictions.
 
