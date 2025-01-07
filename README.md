@@ -2,7 +2,7 @@
 # PIU-Classifier: Predicting Problematic Internet Use Severity
 ![Project Overview](https://github.com/seonokkim/PIU-Classifier/blob/main/presentation/project_overview.png)
 
-This project focuses on developing and deploying machine learning models to predict the ‘sii’ metric, a severity index for problematic internet use. Leveraging advanced ML techniques, it applies CatBoost, LightGBM, and Voting Classifier models to analyze health and demographic data. The pipeline incorporates KNN Imputation to handle missing values and uses scalable, robust preprocessing to ensure accurate predictions.
+This project focuses on developing and deploying machine learning models to predict Severity Impairment Index (sii) metric, a severity index for problematic internet use. Leveraging advanced ML techniques, it applies CatBoost, LightGBM, and Voting Classifier models to analyze health and demographic data. The pipeline incorporates KNN Imputation to handle missing values and uses scalable, robust preprocessing to ensure accurate predictions.
 
 The trained models are integrated into a Streamlit web application, allowing users to input health and demographic data interactively and receive real-time predictions of the ‘sii’ metric. This application provides an accessible and intuitive interface for practical use.
 
